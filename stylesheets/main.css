@@ -1,0 +1,168 @@
+/* ======================================================================= */
+/* Additional Imports */
+/* @import "example.css";*/
+/* ======================================================================= */
+
+
+
+/* ======================================================================= */
+/* Browser Setup */
+/* ======================================================================= */
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+html,
+body {
+    position: relative;
+    min-height: 100%;
+	height:100%;
+
+	margin:0;
+	padding:0;
+}
+
+/* ======================================================================= */
+/* Initial Setup */
+/* ======================================================================= */
+
+body { background-color:black; }
+body {
+	background-image: url("../images/backgrounds/space.png");
+	background-repeat:repeat;
+	background-attachment:fixed;
+}
+
+/* ======================================================================= */
+/* Additional Background */
+/* ======================================================================= */
+.background { position:fixed; }
+.planet {
+	z-index:-999999;
+
+	margin-top:100px;
+	margin-left:50px;
+
+	width: 350px;
+	height: 350px;
+	background: url(../images/backgrounds/planetTexture.png);
+	border-radius: 50%;
+	background-size: 352px;
+	box-shadow: inset 16px 0 40px 10px rgb(0, 0, 0),
+				inset -3px 0 20px 10px rgba(255, 255, 255, 0.25),
+				inset 0px 0px 200px rgba(27, 95, 167, 1),
+					  0px 0px 50px rgba(27, 95, 167, 0.92);
+
+	transform:rotate(13.5deg);
+
+	animation-name: planetrotate;
+	animation-duration: 45s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes planetrotate {
+  from { background-position-x: 0px; }
+  to { background-position-x: 352px; }
+}
+
+/* To keep the planet from overlapping the content */
+.container {
+	z-index:1;
+	position:relative;
+	opacity:0.9;
+}
+
+/* ======================================================================= */
+/* Navigation */
+/* ======================================================================= */
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+.navbar{
+	background: rgba(0,0,0,0.5);
+}
+
+ .navbar-default .navbar-nav > .active{
+   background: rgba(0,0,0,0.30);
+	background: rgba(85, 117, 107, 0.35);
+
+ }
+ .navbar-default .navbar-nav > .active > a, 
+ .navbar-default .navbar-nav > .active > a:hover, 
+ .navbar-default .navbar-nav > .active > a:focus {
+	  background: rgba(0,0,0,0.30);
+ }
+
+.navbar-brand { 
+	padding-top:0px; 
+	margin-right:10px;
+	width:300px;
+}
+.navbar-brand p {
+	line-height:50px;
+}
+.navbar-brand img{
+	float:left;
+	margin-right:10px;
+	display:inline;
+	transition: transform 0.2s;
+}
+.navbar-brand img:hover{
+	transform:rotate(360deg);
+}
+
+/* ======================================================================= */
+/* Footer & Social */
+/* ======================================================================= */
+
+.pageFooter {
+	border-top:solid 1px white;
+
+	width: 100%;
+	height: 100px;
+}
+
+.pageFooter div p {
+	color: #606060;
+	font-size: 12px;
+	margin: 0;
+	padding-top:5px;
+	padding-bottom:5px;
+	text-align: center;
+
+	width:100%;
+	background: rgba(32, 32, 32, 0.75);
+}
+
+footer div .social {
+	width:100%;
+	background: rgba(85, 117, 107, 0.55);
+
+}
+
+.social {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 10px 0;
+}
+.social a {
+	display: block;
+	margin: 0 30px;
+	opacity: 0.6;
+	transition: opacity 0.6s, transform 0.4s
+}
+.social a:hover {
+	transform: rotate(360deg);
+	opacity: 0.8;
+}
+.social a img {
+	margin: 0;
+	height: 50px;
+	width: 50px;
+}
